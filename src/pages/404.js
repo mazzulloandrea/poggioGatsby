@@ -7,6 +7,7 @@ const NotFoundPage = () => {
       window.location.pathname = '/';
     }
   }
+  return <div></div>;
 };
 
 export default NotFoundPage;
