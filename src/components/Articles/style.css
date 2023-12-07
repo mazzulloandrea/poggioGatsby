@@ -1,0 +1,9 @@
+.bigScreenText {
+  font-size: 40px;
+}
+
+.bigScreenMap {
+  width: 100%;
+  height: auto;
+  margin: 5vh 0;
+}

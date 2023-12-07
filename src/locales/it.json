@@ -1,0 +1,32 @@
+{
+  "global": {
+    "formRequired": "Questo campo è obbligatorio"
+  },
+  "containers": {
+    "eventDetails": {
+      "participate": "Partecipa",
+      "about": "Dettagli"
+    }
+  },
+  "components": {
+    "card": {
+      "addToCalendar": "Aggiungi al Calendario"
+    },
+    "newEvent": {
+      "title": "Creazione Nuovo Evento",
+      "form": {
+        "title": "Titolo",
+        "titleMaxLength": "Il titolo è troppo lungo. Max 30 caratteri",
+        "description": "Descrizione",
+        "descriptionMaxLength": "La descrizione è troppa lunga. Max 2000 caratteri",
+        "dateFrom": "Data Inizio",
+        "dateTo": "Data Fine",
+        "tags": "Tags",
+        "tagsPlaceholder": "Per favore utilizza \",\" per tag multipli",
+        "location": "Indirizzo",
+        "submit": "Salva",
+        "submitProcessing": "Processando..."
+      }
+    }
+  }
+}

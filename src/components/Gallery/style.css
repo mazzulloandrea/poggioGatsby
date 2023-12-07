@@ -1,0 +1,65 @@
+/*gallery */
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+	max-height: 100%;
+}
+
+.image-gallery-icon:focus {
+	outline: none;
+}
+
+@media only screen and (orientation: landscape) {
+	.image-gallery-fullscreen-button,
+	.image-gallery-play-button {
+		bottom: 10%;
+	}
+}
+
+.player-wrapper {
+	width: auto; /* Reset width*/
+	height: auto; /* Reset height*/
+}
+.react-player {
+	padding-top: 56.25%; /* Percentage ratio for 16:9*/
+	position: relative; /* Set to relative*/
+}
+
+.react-player > div {
+	position: absolute; /* Scaling will occur since parent is relative now*/
+}
+
+.grow {
+	transform: scale(1.1) !important;
+	transition: all 2000ms linear;
+}
+
+/* video */
+.fake-image-video {
+	width: 100%;
+}
+
+.video-react {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	background: transparent;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.video-react .video-react-big-play-button {
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border: none;
+	display: none;
+}
+.video-react .video-react-big-play-button:before {
+	content: none;
+}
+
+/* .video-react .video-react-big-play-button span {
+  background-image: url('../../assets/video/play_video.png');
+} */

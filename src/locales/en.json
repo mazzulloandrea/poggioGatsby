@@ -1,0 +1,32 @@
+{
+  "global": {
+    "formRequired": "This field is required"
+  },
+  "containers": {
+    "eventDetails": {
+      "participate": "Partecipate",
+      "about": "About"
+    }
+  },
+  "components": {
+    "card": {
+      "addToCalendar": "Add to Calendar"
+    },
+    "newEvent": {
+      "title": "New Event Creation",
+      "form": {
+        "title": "Title",
+        "titleMaxLength": "Title must be equal or less than 30 chars",
+        "description": "Description",
+        "descriptionMaxLength": "Description must be equal or less than 2000 chars",
+        "dateFrom": "Date From",
+        "dateTo": "Date To",
+        "tags": "Tags",
+        "tagsPlaceholder": "Please use \",\" for multiple tags",
+        "location": "Address",
+        "submit": "Submit",
+        "submitProcessing": "Processing..."
+      }
+    }
+  }
+}
