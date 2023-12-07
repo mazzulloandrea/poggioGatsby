@@ -1,0 +1,28 @@
+{
+  "name": "poggio-gatsby",
+  "version": "1.0.0",
+  "private": true,
+  "description": "poggio-gatsby",
+  "author": "Andrea Mazzullo",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.1.4",
+    "gatsby": "^5.12.11",
+    "gatsby-plugin-google-gtag": "^5.12.3",
+    "gatsby-plugin-manifest": "^5.12.3",
+    "gatsby-plugin-sitemap": "^6.12.3",
+    "gatsby-plugin-styled-components": "^6.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.1"
+  }
+}
