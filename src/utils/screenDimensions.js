@@ -2,7 +2,7 @@ import { bigScreen, mediumScreen, tabletWidth, mobileWidth, miniMobileWidth } fr
 import isScreenInPortrait from './screenOrientation';
 
 const getScreenDimensions = () => {
-  const { height, width } = window.screen;
+  const { height, width } = typeof window !== 'undefined' && window.screen;
   const isInPortait = isScreenInPortrait();
   const defProps = { height, width, isPortrait: isInPortait ? 1 : 0 };
 
@@ -13,7 +13,6 @@ const getScreenDimensions = () => {
   } else {
     dimToConsider = width > height ? width : height;
   }
-
   return {
     ...defProps,
     isBigScreen: dimToConsider > bigScreen,

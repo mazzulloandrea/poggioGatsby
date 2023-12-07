@@ -34,7 +34,9 @@ const Footer = () => {
   };
   const handleClickLogo = () => {
     document.documentElement.scrollTop = 0;
-    if (['/', '/tradizione'].includes(window.location.pathname)) return null;
+    if (typeof window !== 'undefined') {
+      if (['/', '/tradizione'].includes(window.location.pathname)) return null;
+    }
     return navigate(routes.tradizione);
   };
 

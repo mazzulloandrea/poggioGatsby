@@ -17,7 +17,7 @@ const Gallery = ({ dimensions }) => {
   const videoRef = useRef(null);
 
   const swipeToVideo = useEffect(() => {
-    if (window.location.hash.includes('#video') && galleryRef) {
+    if (typeof window !== 'undefined' && window.location.hash.includes('#video') && galleryRef) {
       if (containerRef && containerRef.current) {
         containerRef.current.scrollIntoView({
           behavior: 'smooth',
@@ -28,7 +28,7 @@ const Gallery = ({ dimensions }) => {
       }
       setTimeout(() => galleryRef.current.slideToIndex(1), 1000);
     }
-  }, [window.location.hash, galleryRef]);
+  }, [typeof window !== 'undefined' && window.location.hash, galleryRef]);
 
   const renderVideo = useCallback(
     (videoSrc, backVideoImage) => {
@@ -89,13 +89,18 @@ const Gallery = ({ dimensions }) => {
   );
 
   const images = useMemo(() => {
-    let galleriesName = window.location.pathname.substring(1, window.location.pathname.length);
+    let galleriesName =
+      typeof window !== 'undefined' &&
+      window.location.pathname.substring(1, window.location.pathname.length);
     if (!galleries[galleriesName]) galleriesName = 'tradizione';
     const list = galleries[galleriesName].list.map(el => ({ original: el }));
     const gif = galleries[galleriesName].gif;
     const videoSrc = galleries[galleriesName].video;
 
-    if (['/', '/tradizione'].includes(removeTrailingSlash(window.location.pathname))) {
+    if (
+      typeof window !== 'undefined' &&
+      ['/', '/tradizione'].includes(removeTrailingSlash(window.location.pathname))
+    ) {
       list[1] = {
         original: list[1],
         renderItem: () => renderVideo(videoSrc, list[1]),
@@ -105,7 +110,7 @@ const Gallery = ({ dimensions }) => {
       list,
       gif,
     };
-  }, [window.location.pathname]);
+  }, [typeof window !== 'undefined' && window.location.pathname]);
 
   const arrowProps = {
     height: '10vw',
@@ -120,6 +125,8 @@ const Gallery = ({ dimensions }) => {
 
   const changeGif = useCallback(() => {
     if (
+      typeof window !== 'undefined' &&
+      typeof window !== 'undefined' &&
       window.location.href.includes(removeTrailingSlash(window.location.pathname)) &&
       !loadedGif
     ) {
@@ -128,7 +135,7 @@ const Gallery = ({ dimensions }) => {
       gifElement.src = images.gif;
       gifElement.parentElement.classList.add('grow');
     }
-  }, [window.location.pathname, loadedGif]);
+  }, [typeof window !== 'undefined' && window.location.pathname, loadedGif]);
 
   const loadGif = evt => {
     if (evt.target.src.includes(images.list[0].original)) {
