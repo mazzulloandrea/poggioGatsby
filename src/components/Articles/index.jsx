@@ -102,11 +102,19 @@ const Articles = () => {
       switch (r) {
         case '/tradizione':
           return articlesTradizione;
+        case '/tradizione/':
+          return articlesTradizione;
         case '/viti':
+          return articlesViti;
+        case '/viti/':
           return articlesViti;
         case '/cantina':
           return articlesCantine;
+        case '/cantina/':
+          return articlesCantine;
         case '/prodotti':
+          return articlesProdotti;
+        case '/prodotti/':
           return articlesProdotti;
         default:
           return articlesTradizione;
