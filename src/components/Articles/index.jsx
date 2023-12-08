@@ -134,7 +134,10 @@ const Articles = () => {
     if (isTablet) {
       return articleData.tablet || articleData.mobile;
     }
-    return articleData.desktop;
+    if (articleData) {
+      return articleData.desktop;
+    }
+    return [];
   };
 
   const getComponent = (el, elementId) => {
