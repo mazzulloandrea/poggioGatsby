@@ -120,6 +120,7 @@ const Articles = () => {
           return articlesTradizione;
       }
     }
+    return articlesTradizione;
   }, [typeof window !== 'undefined' && window.location.pathname]);
 
   const getOrderOfData = articleData => {
