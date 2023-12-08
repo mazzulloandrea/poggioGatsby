@@ -89,9 +89,11 @@ const Gallery = ({ dimensions }) => {
   );
 
   const images = useMemo(() => {
-    let galleriesName =
-      typeof window !== 'undefined' &&
-      window.location.pathname.substring(1, window.location.pathname.length);
+    let galleriesName = 'tradizione';
+    if (typeof window !== 'undefined') {
+      galleriesName = removeTrailingSlash(window.location.pathname);
+      galleriesName = galleriesName.substring(1, galleriesName.length);
+    }
     if (!galleries[galleriesName]) galleriesName = 'tradizione';
     const list = galleries[galleriesName].list.map(el => ({ original: el }));
     const gif = galleries[galleriesName].gif;
@@ -99,7 +101,7 @@ const Gallery = ({ dimensions }) => {
 
     if (
       typeof window !== 'undefined' &&
-      ['/', '/tradizione'].includes(removeTrailingSlash(window.location.pathname))
+      '/tradizione' === removeTrailingSlash(window.location.pathname)
     ) {
       list[1] = {
         original: list[1],

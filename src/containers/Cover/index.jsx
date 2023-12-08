@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Tradizione, Page, COVER_SHOW, COVER_HIDE } from '..';
+import { navigate } from 'gatsby';
+import { Page, COVER_SHOW, COVER_HIDE } from '..';
 import {
   Wrapper,
   ContainerCentered,
@@ -83,6 +84,12 @@ const Cover = ({ staticSite }) => {
   useEffect(() => {
     setTimeout(() => setStep(1), 1500);
   }, []);
+
+  useEffect(() => {
+    if (showCover === COVER_HIDE) {
+      navigate(`/tradizione`);
+    }
+  }, [showCover]);
 
   useEffect(() => {
     setDimensions({ ...dimensions, isPortrait: isScreenInPortrait() });
@@ -211,7 +218,7 @@ const Cover = ({ staticSite }) => {
           )}
         </ContainerCentered>
       </Wrapper>
-      {showCover === COVER_HIDE && <Page dimensions={dimensions} />}
+      {/* {showCover === COVER_HIDE && <Page dimensions={dimensions} />} */}
       {<CookieComponent setCookie={setCookieAcceptance} />}
     </>
   );
