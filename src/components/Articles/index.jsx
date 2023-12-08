@@ -98,6 +98,7 @@ const Articles = () => {
   const getArticle = useCallback(() => {
     if (typeof window !== 'undefined' && window.location && window.location.pathname) {
       const r = removeTrailingSlash(window.location.pathname);
+      console.log('actual path for article ', r);
       switch (r) {
         case '/tradizione':
           return articlesTradizione;
@@ -111,7 +112,6 @@ const Articles = () => {
           return articlesTradizione;
       }
     }
-    return articlesTradizione;
   }, [typeof window !== 'undefined' && window.location.pathname]);
 
   const getOrderOfData = articleData => {
